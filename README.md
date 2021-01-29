@@ -3,12 +3,12 @@
 This repo contains the code for a Twitter like app, as part of assessment at [Speer](https://www.speer.io/)
 
 ## Tech stack
-1. **ExpressJS**
-2. **Node JS**
-3. **MySql**
+1. **[ExpressJS](https://expressjs.com/)**
+2. **[Node JS](https://nodejs.dev/)**
+3. **[MySql](https://www.mysql.com/)**
 4. **[Knex](http://knexjs.org/)**
-5. **JWT**
-6. **Argon**
+5. **[JWT](https://jwt.io/)**
+6. **[Argon](https://www.npmjs.com/package/argon2)**
 
 ## Description
 This ExpressJS and NodeJS inspired RESTful API exposes a Twitter like app. The API has been designed to keep configuration options for each dependency, and is very developer friendly. 
