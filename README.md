@@ -146,3 +146,10 @@ npm run test
 9. Abstracted response handlers are provided
 10. All inputs are properly validated, and descriptive messages are provided for any error
 11. In order to prevent SQL Injection, the API relies on Knex's internal Prepared statement based parameter passing apporach
+
+## Developer's note 
+Please feel free to contribute to the API, by either doing code reviews or contributing code to Development branch.
+The direct merges to Master branch are reserved, and discouraged.
+
+For more works from API developer [Manik Jain](https://www.linkedin.com/in/manik-jain-52514764/)
+please look out the Github Repo page at [Manik-Jain](https://github.com/Manik-Jain)
