@@ -134,5 +134,15 @@ npm run dev
 npm run test
 ```
 
-##**Advanced Features of API**
-1. 
+## **Advanced Features of API**
+1. Extreme care has been put in to keep the API as cofigurable as possible
+2. Single Responsibility principle has been utilised
+3. All attempts have been made to adhere to RESTful standards
+4. Thorough test cases have been written to test each component
+5. API is CORS compatible 
+6. Express JS's best security practises have been followed to keep the API free from possible attacks
+7. Proper error handling has been done
+8. Descriptive logs have been provided for each user operation, besides application logs to track application access
+9. Abstracted response handlers are provided
+10. All inputs are properly validated, and descriptive messages are provided for any error
+11. In order to prevent SQL Injection, the API relies on Knex's internal Prepared statement based parameter passing apporach
