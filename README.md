@@ -84,7 +84,24 @@ GET : /tweet/user/:userId
 Authorisation : Bearer <Your JWT Token>
 ```
 
-**7. View all registered users (allowed only to Admins)** : As there can be too many users on the system, and not all users are legit. Therefore, this is an Admin only specific functionality that will return a list of all the users. However, the user's passwords are never visible to anybody.
+**7. Update Tweet** : In order to cater the human error while posting tweets, the API provides the capability to update the posts.
+
+REST endpoint:
+
+```Javascript
+PUT : /tweet
+
+Authorisation : Bearer <Your JWT Token>
+Body : 
+    {    
+    "tweetId": <unique tweet id>,
+    "data": <random goes here>
+    }
+```
+
+The update operation will just update the tweet data, without impacting the other metadata about the tweet.
+
+**8. View all registered users (allowed only to Admins)** : As there can be too many users on the system, and not all users are legit. Therefore, this is an Admin only specific functionality that will return a list of all the users. However, the user's passwords are never visible to anybody.
 
 REST endpoint
 
