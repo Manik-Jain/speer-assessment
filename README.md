@@ -6,12 +6,14 @@ This repo contains the code for a Twitter like app, as part of assessment at [Sp
 1. **ExpressJS**
 2. **Node JS**
 3. **MySql**
-4. **Knex**
+4. **[Knex](http://knexjs.org/)**
 5. **JWT**
 6. **Argon**
 
 ## Description
-This ExpressJS and NodeJS inspired RESTful API exposes a Twitter like app, that currently provides the following functions:
+This ExpressJS and NodeJS inspired RESTful API exposes a Twitter like app. The API has been designed to keep configuration options for each dependency, and is very developer friendly. 
+
+Currently the following functionalties are available : 
 
 1. **User Registration** : As mentioned in the rubric, the API should only allow unique user ids to be registered with the system. Hence, the system relies on unique Email id as parameter to permit registrations.
 
@@ -42,7 +44,7 @@ Body : {
 3. **Post a new Tweet** : Only the authorised users are allowed to post tweets on the system, with a limitation of 25 words, to begin with. 
 
 REST endpoint
-```
+``` Javascript
 POST : /tweet
 
 Authorisation : Bearer <Your JWT Token>
@@ -56,7 +58,7 @@ Body : {
 
 REST endpoint
 
-```
+``` Javascript
 GET : /tweet
 
 Authorisation : Bearer <Your JWT Token>
@@ -66,7 +68,7 @@ Authorisation : Bearer <Your JWT Token>
 
 REST endpoint
 
-```
+``` Javascript
 GET : /tweet/:id
 
 Authorisation : Bearer <Your JWT Token>
@@ -76,7 +78,7 @@ Authorisation : Bearer <Your JWT Token>
 
 REST endpoint
 
-```
+``` Javascript
 GET : /tweet/user/:userId
 
 Authorisation : Bearer <Your JWT Token>
@@ -86,10 +88,48 @@ Authorisation : Bearer <Your JWT Token>
 
 REST endpoint
 
-```
+``` Javascript
 GET : /user
 
 Authorisation : Bearer <Your JWT Token>
 Header : 
     user - <registered email>
+```
+
+## Execution steps
+
+In order to run a local instance of the API, follow the following steps :
+
+1. Clone the repository, and checkout to [develop](https://github.com/Manik-Jain/speer-assessment/tree/development)
+2. In your node terminal, execute the below mentioned command to install the necesary dependencies
+``` Javascript
+npm init
+```
+3. Ensure you have a running instance of MySql on your machine. All the database migrations are being handled by [knex](http://knexjs.org/) In order to configure the connection, please navigate to **knex-config/connection.js**. A dummy connection object is provided as under:
+
+```Javascript
+    client : 'mysql',
+    devConnection : {
+        "host" : <your host>,
+        "user" : <your user>,
+        "password" : <your password>,
+        "database" : <your db name>
+    }
+```
+
+4. Once this is done, execute the following command. It will instantly create all the database tables for you.
+```Javascript
+knex --esm migrate:latest
+```
+
+5. From project folder, execute the following commads according to the need (Dev/Test),
+
+**Development** : This will start the app on port specified in the properites file
+```Javascript
+npm run dev
+```
+
+**Test** : This will trigger 64 automated test cases, to keeo an eye on regression failures (if any)
+```Javascript
+npm run test
 ```
