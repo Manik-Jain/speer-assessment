@@ -25,6 +25,8 @@ Body : {
 }
 ```
 
+**In order to keep the login details private, The system uses Argon inspired password encryption/decryption mechanism.**
+
 2. **Login** : Once the user is registered, ze must be able to login back as per their wish. Therefore, a unique session must be established each time a user logs in to the system. The API utilises [JWT](https://jwt.io/) token based authentication and session management. As mentioned on the official page of JWT, the JWT tokens issued must be short-lived, and must be refresehed so as to continue the session. In accordance to the guidelines provided by JWT, the API keeps a short lived **10 mins** for JWT token, and captures a refresh token that has its life span of **30 mins**. Therefore, the system utilising the API should aim to call the following end point in order to have a **soft-refresh** of the short lived JWT token
 
 REST endpoint
@@ -50,7 +52,7 @@ Body : {
 }
 ```
 
-4. **Get Tweet** : As an authorised user, ze should be able to view all the tweets posted. This end-point returns an array of tweets done so far
+4. **Get Tweets** : As an authorised user, ze should be able to view all the tweets posted. This end-point returns an array of tweets done 
 
 REST endpoint
 
@@ -58,4 +60,36 @@ REST endpoint
 GET : /tweet
 
 Authorisation : Bearer <Your JWT Token>
+```
+
+5. **Get Specific Tweet** : Once a tweet has been posted, a unique id is assigned to it. And as an authorised, ze can view a specific tweet and its metadata (likes, re-tweets, ...)
+
+REST endpoint
+
+```
+GET : /tweet/:id
+
+Authorisation : Bearer <Your JWT Token>
+```
+
+6. **Get all tweets posted by a specific user** : As users connect and follow each other on the social media, they very often like to view some posts by their favourite person. In order to cater to that, this end-point takes in a user id as an input, and returns all the tweets done by this user
+
+REST endpoint
+
+```
+GET : /tweet/user/:userId
+
+Authorisation : Bearer <Your JWT Token>
+```
+
+**7. View all registered users (allowed only to Admins)** : As there can be too many users on the system, and not all users are legit. Therefore, this is an Admin only specific functionality that will return a list of all the users. However, the user's passwords are never visible to anybody.
+
+REST endpoint
+
+```
+GET : /user
+
+Authorisation : Bearer <Your JWT Token>
+Header : 
+    user - <registered email>
 ```
