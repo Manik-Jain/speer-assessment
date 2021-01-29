@@ -2,7 +2,7 @@
 
 This repo contains the code for a Twitter like app, as part of assessment at [Speer](https://www.speer.io/)
 
-##Tech stack
+## Tech stack
 1. **ExpressJS**
 2. **Node JS**
 3. **MySql**
