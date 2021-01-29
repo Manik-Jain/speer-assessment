@@ -151,5 +151,4 @@ npm run test
 Please feel free to contribute to the API, by either doing code reviews or contributing code to Development branch.
 The direct merges to Master branch are reserved, and discouraged.
 
-For more works from API developer [Manik Jain](https://www.linkedin.com/in/manik-jain-52514764/)
-please look out the Github Repo page at [Manik-Jain](https://github.com/Manik-Jain)
+For more works from API developer [Manik Jain](https://www.linkedin.com/in/manik-jain-52514764/), please look out the Github Repo page at [Manik-Jain](https://github.com/Manik-Jain)
