@@ -129,7 +129,10 @@ knex --esm migrate:latest
 npm run dev
 ```
 
-**Test** : This will trigger 64 automated test cases, to keeo an eye on regression failures (if any)
+**Test** : This will trigger 64 automated test cases, to keep an eye on regression failures (if any)
 ```Javascript
 npm run test
 ```
+
+##**Advanced Features of API**
+1. 
